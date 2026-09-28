@@ -1,0 +1,77 @@
+name: Deploy
+
+# Builds the docs with the plan and suggestions of milimon (dev branch) and publishes them to
+# GitHub Pages. Runs on every push to main, every day (so changes to milimon/docs show up) and by hand.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout milimon/docs
+        uses: actions/checkout@v4
+        with:
+          repository: inzumer/milimon
+          ref: dev
+          path: sources/milimon
+          sparse-checkout: docs
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test scripts
+        run: node --test "scripts/*.test.mjs"
+
+      - name: Format
+        run: pnpm format:check
+
+      - name: Build (fails on broken links)
+        env:
+          DOCS_SOURCE: sources/milimon/docs
+        run: pnpm build
+
+      - name: Upload site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

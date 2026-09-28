@@ -1,0 +1,13 @@
+# pnpm 12 blocks dependency install scripts by default; only these are allowed explicitly.
+allowBuilds:
+  esbuild: true
+  sharp: true
+
+# Also install the WebAssembly builds of native packages, used automatically when a native binary
+# can't load (e.g. Windows Smart App Control blocking a freshly released `.node` file).
+supportedArchitectures:
+  os:
+    - current
+  cpu:
+    - current
+    - wasm32

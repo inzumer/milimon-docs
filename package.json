@@ -1,0 +1,35 @@
+{
+  "name": "milimon-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Documentation of Milimon: how the app works, flow diagrams, architecture, guides, plan and suggestions.",
+  "type": "module",
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "sync": "node scripts/sync-docs.mjs",
+    "dev": "pnpm sync && astro dev",
+    "build": "pnpm sync && astro build",
+    "preview": "astro preview",
+    "check": "pnpm sync && astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/starlight": "^0.42.4",
+    "astro": "^7.3.5",
+    "astro-mermaid": "^2.1.0",
+    "mermaid": "^11.17.2",
+    "sharp": "^0.35.4",
+    "starlight-links-validator": "^0.26.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^7.0.2"
+  }
+}

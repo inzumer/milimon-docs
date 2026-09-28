@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.env
+# Generated from milimon/docs by scripts/sync-docs.mjs
+src/content/docs/plan/
+src/content/docs/sugerencias/
+sources/

@@ -1,0 +1,7 @@
+dist/
+.astro/
+node_modules/
+pnpm-lock.yaml
+# Generated from milimon/docs by scripts/sync-docs.mjs
+src/content/docs/plan/
+src/content/docs/sugerencias/
