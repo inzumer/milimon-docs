@@ -12,7 +12,7 @@ diagramas, arquitectura, guías para quien gestiona el sitio, el plan y las suge
   dibujados en el navegador y en el tema claro u oscuro.
 - `src/content/docs/`: las páginas propias (Arquitectura, Cómo funciona, Guías, Desarrollo).
 - **Plan y Sugerencias** no se escriben acá: `scripts/sync-docs.mjs` los copia en cada build desde
-  `milimon-frontend-web/docs` (local: `../milimon/docs` o `DOCS_SOURCE`; CI: la rama `dev` de
+  `milimon-frontend-web/docs` (local: `../milimon-frontend-web/docs` o `DOCS_SOURCE`; CI: la rama `dev` de
   `inzumer/milimon-frontend-web`).
 
 ## Comandos

@@ -52,5 +52,5 @@ Detalle y orden de la migración en la
   `scripts/sync-docs.mjs`: se editan allá, no acá.
 - Los diagramas son bloques ` ```mermaid ` dentro del Markdown; se dibujan en el navegador y
   siguen el modo claro u oscuro.
-- `pnpm dev` levanta el sitio en local (lee `../milimon/docs`, o `DOCS_SOURCE`); `pnpm build`
+- `pnpm dev` levanta el sitio en local (lee `../milimon-frontend-web/docs`, o `DOCS_SOURCE`); `pnpm build`
   falla si hay enlaces internos rotos.

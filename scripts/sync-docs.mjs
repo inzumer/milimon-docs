@@ -1,7 +1,8 @@
 // Copies the plan and the suggestions from milimon-frontend-web/docs (the single source) into Starlight pages:
 // adds the frontmatter title and order, drops the original h1 and rewrites the links between
-// documents. Locally it reads ../milimon/docs; CI checks the repo out and sets DOCS_SOURCE.
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+// documents. Locally it reads ../milimon-frontend-web/docs (or ../milimon/docs, the old folder
+// name); CI checks the repo out and sets DOCS_SOURCE.
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -63,7 +64,11 @@ export const toPage = (markdown, { title, order, folder, base }) => {
 };
 
 const main = () => {
-  const source = resolve(process.env.DOCS_SOURCE ?? '../milimon/docs');
+  const source = resolve(
+    process.env.DOCS_SOURCE ??
+      ['../milimon-frontend-web/docs', '../milimon/docs'].find((dir) => existsSync(dir)) ??
+      '../milimon-frontend-web/docs',
+  );
   const base = (process.env.BASE_PATH ?? '/milimon-docs').replace(/\/+$/, '');
   const out = resolve('src/content/docs');
 
