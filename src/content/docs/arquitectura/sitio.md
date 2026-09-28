@@ -20,7 +20,7 @@ flowchart TB
   services["src/services · API de cuentas, Google Tag Manager"]
   utils["src/utils · fórmulas, formatos, rutas, SEO"]
   i18n["src/i18n · textos es/en por carpeta"]
-  lib["@inzumer/ui-library (futuro @inzumer/ui-lib) · componentes base"]
+  lib["@inzumer/ui-library · componentes base"]
 
   paginas --> layouts --> componentes
   paginas --> i18n
