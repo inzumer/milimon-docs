@@ -31,16 +31,19 @@ sidebar:
 
 ## Paquetes `@inzumer`
 
-Hoy viven juntos en el monorepo `ui-library`; se separan en un repo por paquete.
+Un repo por paquete (`inzumer-<nombre>`), publicados en npm desde su propio repo con Changesets.
 
-| Repo y carpeta      | Paquete              | Antes                                |
-| ------------------- | -------------------- | ------------------------------------ |
-| `inzumer-ui-lib`    | `@inzumer/ui-lib`    | `@inzumer/ui-library`                |
-| `inzumer-ui-tokens` | `@inzumer/ui-tokens` | `@inzumer/tokens`                    |
-| `inzumer-prettier`  | `@inzumer/prettier`  | `@inzumer/prettier-config` (privado) |
-| `inzumer-eslint`    | `@inzumer/eslint`    | `@inzumer/eslint-config` (privado)   |
-| `inzumer-tsconfig`  | `@inzumer/tsconfig`  | `@inzumer/tsconfig` (privado)        |
-| `inzumer-ci`        | —                    | Workflows reutilizables de Actions   |
+| Repo y carpeta       | Paquete               | Qué es                             |
+| -------------------- | --------------------- | ---------------------------------- |
+| `inzumer-ui-library` | `@inzumer/ui-library` | Componentes y Storybook            |
+| `inzumer-tokens`     | `@inzumer/tokens`     | Tokens, temas y preset de Tailwind |
+| `inzumer-prettier`   | `@inzumer/prettier`   | Config de Prettier                 |
+| `inzumer-eslint`     | `@inzumer/eslint`     | Config de ESLint                   |
+| `inzumer-tsconfig`   | `@inzumer/tsconfig`   | Configs de TypeScript              |
+| `inzumer-ci`         | —                     | Workflows reutilizables de Actions |
+
+`ui-library` y `tokens` mantienen su nombre de npm. Publicar: merge del PR "Version Packages";
+Actions publica con trusted publishing de npm (sin tokens guardados).
 
 Detalle y orden de la migración en la
 [sugerencia 08](/milimon-docs/sugerencias/08-calidad-y-tests/#repositorios-y-paquetes-decidido-2026-09-27).

@@ -7,14 +7,14 @@ sidebar:
 
 Milimon son tres piezas propias y algunos servicios externos, todos en planes gratuitos.
 
-| Pieza                              | Qué hace                                                    | Dónde vive                                              |
-| ---------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------- |
-| **Sitio** (`milimon-frontend-web`) | Páginas, calculadoras, cuenta y gestión del sitio           | GitHub Pages (`inzumer.github.io/milimon-frontend-web`) |
-| **API** (`milimon-backend-nest`)   | Cuentas, sincronización, roles y agenda                     | Render (plan free)                                      |
-| **Base de datos**                  | Perfiles, cálculos guardados, sesiones, roles, agenda       | Neon (Postgres, plan free)                              |
-| **Librería** (`@inzumer/ui-lib`)   | Componentes compartidos (botones, modales, cookies…)        | npm, con Storybook                                      |
-| Google / Facebook                  | Inicio de sesión (Google Identity Services, Facebook Login) | Externos                                                |
-| Google Tag Manager                 | Medición, solo con consentimiento                           | Externo                                                 |
+| Pieza                                | Qué hace                                                    | Dónde vive                                              |
+| ------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------- |
+| **Sitio** (`milimon-frontend-web`)   | Páginas, calculadoras, cuenta y gestión del sitio           | GitHub Pages (`inzumer.github.io/milimon-frontend-web`) |
+| **API** (`milimon-backend-nest`)     | Cuentas, sincronización, roles y agenda                     | Render (plan free)                                      |
+| **Base de datos**                    | Perfiles, cálculos guardados, sesiones, roles, agenda       | Neon (Postgres, plan free)                              |
+| **Librería** (`@inzumer/ui-library`) | Componentes compartidos (botones, modales, cookies…)        | npm, con Storybook                                      |
+| Google / Facebook                    | Inicio de sesión (Google Identity Services, Facebook Login) | Externos                                                |
+| Google Tag Manager                   | Medición, solo con consentimiento                           | Externo                                                 |
 
 ## Cómo se conectan
 
@@ -29,18 +29,21 @@ flowchart TB
   subgraph github[GitHub]
     repoWeb[milimon-frontend-web] -- Actions: build --> pages[GitHub Pages]
     repoApi[milimon-backend-nest]
-    repoLib[inzumer-ui-lib] -- release --> npm[(npm @inzumer)]
+    repoLib[inzumer-ui-library] -- release --> npm[(npm @inzumer)]
   end
 
-  subgraph render[Render]
+  subgraph render[Render · milimon-backend-nest]
     api[API NestJS]
   end
-  neon[(Neon Postgres)]
+  neon[(Neon · milimon-db)]
+  gtm[Google Tag Manager]
 
   pages -- sirve HTML, JS, CSS --> sitio
   npm -. dependencia .-> repoWeb
   repoApi -- deploy de main --> api
   sitio -- fetch con api key y token --> api
+  sitio -. solo con consentimiento .-> gtm
+  repoApi -- keep-alive /health/live --> api
   api <--> neon
 ```
 

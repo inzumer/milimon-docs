@@ -32,5 +32,8 @@ flowchart TD
   switch de la página de privacidad.
 - Los eventos (`menu_opened`, `language_changed`, `page_shared`, `sign_out`…) pasan siempre por
   `track()`; cada elemento interactivo tiene un id estable para usar como disparador en GTM.
+- **Staging** (GitHub Pages) carga el entorno **Staging** del contenedor (`PUBLIC_GTM_AUTH` y
+  `PUBLIC_GTM_PREVIEW`); producción usará la versión **Live**. El modo vista previa (Tag
+  Assistant) funciona con la CSP del sitio, siempre que se acepten las cookies.
 - En la librería, banner, preferencias y ajustes en página son un solo componente,
   **`CookieConsent`**, con los modos `banner`, `modal` e `inline` (desde `@inzumer/ui-library` 2.0.0).
