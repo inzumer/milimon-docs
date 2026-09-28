@@ -8,12 +8,12 @@ sidebar:
 ```mermaid
 flowchart LR
   subgraph repos[GitHub]
-    web[milimon · main]
-    api[api-milimon · main]
+    web[milimon-frontend-web · main]
+    api[milimon-backend-nest · main]
     docs[milimon-docs · main]
   end
-  web -- "Actions: build + auditoría a11y" --> pages[GitHub Pages<br/>inzumer.github.io/milimon]
-  api -- "integración de Render" --> render[Render<br/>api-milimon.onrender.com]
+  web -- "Actions: build + auditoría a11y" --> pages[GitHub Pages<br/>inzumer.github.io/milimon-frontend-web]
+  api -- "integración de Render" --> render[Render<br/>milimon-backend-nest.onrender.com]
   render -- DATABASE_URL --> neon[(Neon Postgres)]
   docs -- "Actions: build" --> docsPages[GitHub Pages<br/>inzumer.github.io/milimon-docs]
 ```

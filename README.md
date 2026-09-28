@@ -1,6 +1,6 @@
 # milimon-docs
 
-Documentación de [Milimon](https://github.com/inzumer/milimon): cómo funciona la app, flujos con
+Documentación de [Milimon](https://github.com/inzumer/milimon-frontend-web): cómo funciona la app, flujos con
 diagramas, arquitectura, guías para quien gestiona el sitio, el plan y las sugerencias.
 
 **Sitio:** https://inzumer.github.io/milimon-docs/ (después, `docs.<dominio>`).
@@ -12,7 +12,8 @@ diagramas, arquitectura, guías para quien gestiona el sitio, el plan y las suge
   dibujados en el navegador y en el tema claro u oscuro.
 - `src/content/docs/`: las páginas propias (Arquitectura, Cómo funciona, Guías, Desarrollo).
 - **Plan y Sugerencias** no se escriben acá: `scripts/sync-docs.mjs` los copia en cada build desde
-  `milimon/docs` (local: `../milimon/docs`; CI: la rama `dev` de `inzumer/milimon`).
+  `milimon-frontend-web/docs` (local: `../milimon-frontend-web/docs` o `DOCS_SOURCE`; CI: la rama `dev` de
+  `inzumer/milimon-frontend-web`).
 
 ## Comandos
 
