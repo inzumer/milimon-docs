@@ -1,11 +1,11 @@
-// Copies the plan and the suggestions from milimon/docs (the single source) into Starlight pages:
+// Copies the plan and the suggestions from milimon-frontend-web/docs (the single source) into Starlight pages:
 // adds the frontmatter title and order, drops the original h1 and rewrites the links between
 // documents. Locally it reads ../milimon/docs; CI checks the repo out and sets DOCS_SOURCE.
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const REPO_BLOB = 'https://github.com/inzumer/milimon/blob/dev/docs';
+const REPO_BLOB = 'https://github.com/inzumer/milimon-frontend-web/blob/dev/docs';
 
 /** `03-contenido-y-redes` → `03-contenido-y-redes`; `README` → `index`. */
 export const pageSlug = (file) => (file === 'README' ? 'index' : file);

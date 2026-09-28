@@ -31,11 +31,11 @@ describe('sync docs', () => {
   it('should send other files to GitHub and leave external links alone', () => {
     assert.equal(
       rewriteHref('../TRACKING.md', 'suggestions', BASE),
-      'https://github.com/inzumer/milimon/blob/dev/docs/TRACKING.md',
+      'https://github.com/inzumer/milimon-frontend-web/blob/dev/docs/TRACKING.md',
     );
     assert.equal(
       rewriteHref('./adr/0001-astro.md', '', BASE),
-      'https://github.com/inzumer/milimon/blob/dev/docs/adr/0001-astro.md',
+      'https://github.com/inzumer/milimon-frontend-web/blob/dev/docs/adr/0001-astro.md',
     );
     assert.equal(
       rewriteHref('https://starlight.astro.build/', '', BASE),

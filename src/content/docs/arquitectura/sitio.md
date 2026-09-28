@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-Repositorio [`inzumer/milimon`](https://github.com/inzumer/milimon). Astro genera HTML estático;
+Repositorio [`inzumer/milimon-frontend-web`](https://github.com/inzumer/milimon-frontend-web). Astro genera HTML estático;
 React se usa solo en las **islas** interactivas.
 
 ## Capas
@@ -20,7 +20,7 @@ flowchart TB
   services["src/services · API de cuentas, Google Tag Manager"]
   utils["src/utils · fórmulas, formatos, rutas, SEO"]
   i18n["src/i18n · textos es/en por carpeta"]
-  lib["@inzumer/ui-library · componentes base"]
+  lib["@inzumer/ui-library (futuro @inzumer/ui-lib) · componentes base"]
 
   paginas --> layouts --> componentes
   paginas --> i18n
@@ -38,7 +38,7 @@ flowchart TB
 - `/` elige el idioma: el que la persona eligió antes, el del navegador o español.
 - Textos en `src/i18n/<carpeta>/{es,en}.json`, con las mismas claves en los dos idiomas (lo
   verifica un test).
-- Todo se sirve bajo `/milimon` en GitHub Pages: los enlaces se arman con `localizedPath` / `withBase`.
+- Todo se sirve bajo `/milimon-frontend-web` en GitHub Pages (la ruta sale del nombre del repo): los enlaces se arman con `localizedPath` / `withBase`.
 
 ## Estado
 

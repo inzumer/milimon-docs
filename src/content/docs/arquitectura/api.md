@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Repositorio `inzumer/api-milimon` (privado). NestJS 12 (ESM) + TypeORM + Postgres.
+Repositorio `inzumer/milimon-backend-nest` (privado; antes `api-milimon`). NestJS 12 (ESM) + TypeORM + Postgres.
 
 ## Cada pedido pasa por
 

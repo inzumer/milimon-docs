@@ -30,7 +30,7 @@ jobs:
       - name: Checkout milimon/docs
         uses: actions/checkout@v4
         with:
-          repository: inzumer/milimon
+          repository: inzumer/milimon-frontend-web
           ref: dev
           path: sources/milimon
           sparse-checkout: docs

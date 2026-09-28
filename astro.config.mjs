@@ -23,7 +23,13 @@ export default defineConfig({
       logo: { src: './src/assets/logo.png', alt: 'Milimon' },
       favicon: '/favicon.png',
       customCss: ['./src/styles/theme.css'],
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/inzumer/milimon' }],
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/inzumer/milimon-frontend-web',
+        },
+      ],
       editLink: { baseUrl: 'https://github.com/inzumer/milimon-docs/edit/main/' },
       lastUpdated: true,
       plugins: [starlightLinksValidator({ errorOnRelativeLinks: false })],
