@@ -26,8 +26,8 @@ flowchart LR
   **vista previa** a la derecha (portada y ficha, o el artículo, en español o inglés), que se
   actualiza al guardar. Solo existe en desarrollo: el sitio publicado no la incluye.
 - La **dirección** va arriba de todo y sale del título en inglés (las rutas son en inglés).
-- Cada receta tiene título (la dirección sale del título y se ajusta a mano, en inglés), resumen,
-  categoría, tiempo, porciones, foto principal, ingredientes y pasos (con foto opcional).
+- Cada receta tiene títulos (inglés y español), resumen, categoría, tiempo, porciones, foto
+  principal, ingredientes y pasos (con foto opcional).
 - Todo va en **español y en inglés**; el inglés es opcional y, si falta, el sitio muestra el
   español.
 - **Blog**: el texto admite títulos de sección, negrita, cursiva, listas, citas, enlaces e
@@ -44,8 +44,8 @@ Con el deploy en Cloudflare Pages:
   publica con un botón; cada publicación es un commit en el repo.
 - Acceso solo para admins y vista previa por rama de borrador (ver la
   [sugerencia 02](/milimon-docs/sugerencias/02-cms-y-emails/)).
-- Pasar a Keystatic el blog, las guías, "Sobre mí" y los textos del inicio que hoy están en
-  `src/i18n`.
+- Pasar a Keystatic el artículo actual del blog, las guías, "Sobre mí" y los textos del inicio que
+  hoy están en `src/i18n`.
 
 ## Tipos de texto
 
