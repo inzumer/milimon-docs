@@ -1,5 +1,5 @@
 ---
-title: Contenido: recetas y blog (Keystatic)
+title: 'Contenido: recetas y blog (Keystatic)'
 description: Cómo se cargan recetas y artículos con Keystatic, con vista previa, y cómo llegan al sitio.
 sidebar:
   order: 10
