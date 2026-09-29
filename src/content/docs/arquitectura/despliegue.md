@@ -8,7 +8,7 @@ sidebar:
 ```mermaid
 flowchart LR
   subgraph repos[GitHub]
-    web[milimon-frontend-web · main]
+    web[milimon-frontend-web · dev]
     api[milimon-backend-nest · main]
     docs[milimon-docs · main]
   end
@@ -22,8 +22,8 @@ flowchart LR
 
 ## Sitio · GitHub Pages (staging)
 
-- Es el **staging** hasta que exista el dominio oficial. Se publica con cada push a `main`
-  (`pages.yml`) o a mano.
+- Es el **staging**: se publica con cada push a **`dev`** (`pages.yml`) o a mano, así lo que se
+  aprueba se valida en unos minutos. Producción (dominio propio) va a publicar `main` con los releases.
 - Variables públicas del repo (terminan en el bundle): `PUBLIC_API_URL`, `PUBLIC_API_KEY`,
   `PUBLIC_API_APP_ID`, `PUBLIC_GOOGLE_CLIENT_ID`, `PUBLIC_FACEBOOK_APP_ID`, `PUBLIC_GTM_ID` y,
   para el entorno Staging de GTM, `PUBLIC_GTM_AUTH` y `PUBLIC_GTM_PREVIEW`.
