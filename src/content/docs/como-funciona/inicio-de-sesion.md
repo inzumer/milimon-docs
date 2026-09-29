@@ -23,9 +23,12 @@ sequenceDiagram
   S->>G: Carga el botón (client id público)
   P->>G: Elige su cuenta de Google
   G-->>S: Credencial firmada (ID token)
-  S->>A: POST /auth/google { credential } + api key
+  S->>A: POST /auth/google { credential, locale } + api key
   A->>G: Verifica firma, audiencia (client id) y vencimiento
   A->>D: Busca la identidad google/sub<br/>o la crea (o la une por email verificado)
+  opt Cuenta nueva
+    A-)P: Mail de bienvenida (ver Mails)
+  end
   opt Email en BOOTSTRAP_ADMIN_EMAILS y sin cambios de rol previos
     A->>D: La hace admin y lo registra
   end
@@ -38,7 +41,9 @@ sequenceDiagram
 - **Facebook** sigue el mismo camino con `POST /auth/facebook` (token de Facebook Login, que la
   API valida contra Graph API). El botón está deshabilitado hasta que exista la app de Meta.
 - Si la persona ya tenía cuenta con el otro proveedor y el **mismo email verificado**, se vincula
-  a esa cuenta en lugar de crear otra.
+  a esa cuenta en lugar de crear otra (y no hay mail de bienvenida).
+- `locale` es el idioma de la página (`es` o `en`): la bienvenida lo usa mientras el perfil no
+  tenga idioma.
 
 ## Qué tiene que estar configurado
 
