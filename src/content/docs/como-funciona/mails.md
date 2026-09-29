@@ -5,6 +5,12 @@ sidebar:
   order: 11
 ---
 
+:::caution[Pendiente: dominio propio]
+Todavía no hay dominio propio, así que Resend no está configurado y **no sale ningún mail**. Cuando
+exista el dominio: verificarlo en Resend (SPF, DKIM, DMARC) y cargar `RESEND_API_KEY` y `EMAIL_FROM`
+en Render.
+:::
+
 La API manda dos mails transaccionales con [Resend](https://resend.com). No hay newsletter ni
 mails de marketing.
 
