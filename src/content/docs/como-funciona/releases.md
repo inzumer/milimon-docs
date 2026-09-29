@@ -28,7 +28,8 @@ gitGraph
 ```
 
 - `feature/*` sale de `dev` y vuelve con un PR (merge `--no-ff`).
-- `main` solo recibe `release/*` y `hotfix/*`, y es lo que se publica.
+- `dev` se publica en **staging** (GitHub Pages) con cada push: ahí se valida lo aprobado.
+- `main` solo recibe `release/*` y `hotfix/*`: es la versión estable (producción con el dominio propio).
 - Commits y títulos de PR con **Conventional Commits** (`feat`, `fix`, `docs`, `ci`…).
 
 ## Release automático (hora de Madrid)
@@ -44,9 +45,10 @@ flowchart LR
   lun --> ci2[CI de nuevo] --> merge[Fusiona a main]
   merge --> tag[Tag vX.Y.Z + GitHub Release]
   tag --> backport[Backport a dev<br/>PR fusionado solo]
-  tag --> deploy[Deploy: Pages / Render]
+  tag --> deploy[Deploy: Render · producción]
 ```
 
+- La **agenda** de gestión muestra cuándo cierra y sale la próxima versión estable.
 - Si hay conflicto en el backport, el PR queda abierto para resolverlo a mano.
 - Con `RELEASE_AUTO_MERGE=false` (variable del repo), el lunes no se fusiona solo: el PR queda para
   revisarlo, y al fusionarlo a mano igual se hacen el tag, el release y el backport.
