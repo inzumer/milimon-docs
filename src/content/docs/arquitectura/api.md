@@ -29,16 +29,17 @@ seguridad con Helmet.
 
 ## Rutas
 
-| Módulo  | Rutas                                                                        | Acceso              |
-| ------- | ---------------------------------------------------------------------------- | ------------------- |
-| auth    | `POST /auth/google`, `/auth/facebook`, `/auth/refresh`, `/auth/sign-out`     | Cliente (api key)   |
-| auth    | `POST /auth/facebook/data-deletion`                                          | Meta (firma propia) |
-| user    | `GET /me`, `DELETE /me`, `GET/PUT /me/profile`                               | Sesión              |
-| drafts  | `GET /me/drafts`, `PUT/DELETE /me/drafts/:formulaId`                         | Sesión              |
-| history | `GET /me/history`, `PUT/DELETE /me/history/:id`                              | Sesión              |
-| admin   | `GET /admin/users`, `PATCH /admin/users/:id/role`, `GET /admin/role-changes` | Rol admin           |
-| agenda  | `GET/POST /admin/agenda`, `PATCH/DELETE /admin/agenda/:id`                   | Rol editor o admin  |
-| health  | `GET /health`                                                                | Público (Render)    |
+| Módulo        | Rutas                                                                        | Acceso              |
+| ------------- | ---------------------------------------------------------------------------- | ------------------- |
+| auth          | `POST /auth/google`, `/auth/facebook`, `/auth/refresh`, `/auth/sign-out`     | Cliente (api key)   |
+| auth          | `POST /auth/facebook/data-deletion`                                          | Meta (firma propia) |
+| user          | `GET /me`, `DELETE /me`, `GET/PUT /me/profile`                               | Sesión              |
+| drafts        | `GET /me/drafts`, `PUT/DELETE /me/drafts/:formulaId`                         | Sesión              |
+| history       | `GET /me/history`, `PUT/DELETE /me/history/:id`                              | Sesión              |
+| saved-recipes | `GET /me/saved-recipes`, `PUT/DELETE /me/saved-recipes/:recipeId`            | Sesión              |
+| admin         | `GET /admin/users`, `PATCH /admin/users/:id/role`, `GET /admin/role-changes` | Rol admin           |
+| agenda        | `GET/POST /admin/agenda`, `PATCH/DELETE /admin/agenda/:id`                   | Rol editor o admin  |
+| health        | `GET /health`                                                                | Público (Render)    |
 
 ## Reglas
 
