@@ -162,6 +162,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  http-cache-semantics@4.2.0: dd81aac873d837562a1a2ee990edd31b8337debf16d7940e5606e3e4e2c1d861
+
 importers:
 
   .:
@@ -4280,7 +4283,7 @@ snapshots:
       get-tsconfig: 5.0.0-beta.4
       github-slugger: 2.0.0
       html-escaper: 3.0.3
-      http-cache-semantics: 4.2.0
+      http-cache-semantics: 4.2.0(patch_hash=dd81aac873d837562a1a2ee990edd31b8337debf16d7940e5606e3e4e2c1d861)
       js-yaml: 4.3.2
       jsonc-parser: 3.3.1
       magic-string: 1.4.2
@@ -5049,7 +5052,7 @@ snapshots:
 
   html-whitespace-sensitive-tag-names@3.0.1: {}
 
-  http-cache-semantics@4.2.0: {}
+  http-cache-semantics@4.2.0(patch_hash=dd81aac873d837562a1a2ee990edd31b8337debf16d7940e5606e3e4e2c1d861): {}
 
   i18next@26.4.2(typescript@7.0.2):
     optionalDependencies:
