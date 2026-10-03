@@ -11,3 +11,13 @@ supportedArchitectures:
   cpu:
     - current
     - wasm32
+
+# Advisories fixed by a local patch (no upstream release yet); `pnpm audit` can't see patches.
+# Drop the patch and the entry once a fixed version ships.
+auditConfig:
+  ignoreGhsas:
+    # http-cache-semantics (via astro): max-stale no longer serves responses zeroed for security.
+    - GHSA-ch52-4w7c-c8xp
+
+patchedDependencies:
+  http-cache-semantics@4.2.0: patches/http-cache-semantics@4.2.0.patch
