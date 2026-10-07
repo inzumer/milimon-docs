@@ -21,3 +21,8 @@ auditConfig:
 
 patchedDependencies:
   http-cache-semantics@4.2.0: patches/http-cache-semantics@4.2.0.patch
+
+# Patched versions of vulnerable transitive dependencies (pnpm audit).
+overrides:
+  'postcss-selector-parser@<7.1.6': '^7.1.6'
+  'source-map-js@<1.2.2': '^1.2.2'
